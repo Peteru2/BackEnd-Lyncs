@@ -22,10 +22,10 @@ const Dashboard = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-      // Simulate loading for 3 seconds (adjust as needed)
+   
       const loadingTimeout = setTimeout(() => {
         setIsLoading(false);
-      }, );
+      },2000 );
   
       // Clear the timeout if the component unmounts
       return () => clearTimeout(loadingTimeout);
@@ -63,8 +63,8 @@ const Dashboard = () => {
                 <Navbar />
             {isLoading ? (<Loader />) :  (
                     <div className="mx-6 my-4">
-                        <div className="flex w-full">
-                        <h4 className="text-2xl mt-7 font-bold">Overview</h4>
+                        <div className="flex w-full mt-7">
+                        <h4 className="text-2xl  font-bold">Overview</h4>
                         <div className="ml-auto">
                             <img src={Funnel} alt="funnel"/>
                         </div>
