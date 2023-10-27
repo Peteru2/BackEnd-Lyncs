@@ -45,7 +45,7 @@ const Pagination = ({ totalPages, onPageChange }) => {
         onClick={handleNextPage}
         disabled={currentPage === totalPages}
       >
-        <i className="fa fa-arrow-right"></i>
+        <i className="fa fa-arrow-right">rt</i>
       </button>
     </div>
   );
