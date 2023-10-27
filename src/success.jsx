@@ -1,0 +1,25 @@
+import closeButton from "./images/forbidden-2.svg"
+import Success from "./images/success.png"
+const Succes = ({onClose}) => {
+
+    return ( 
+        <>
+            <section>
+                                    <div className="flex w-full">
+                                        <h3>Successful!</h3>
+                                        <div className="ml-auto cursor-pointer" onClick={onClose}><img src={closeButton} alt="closebutton" /></div>
+                                        </div>
+                                        <h2 className="text-sm text-gray-400">Your product has been pushed successfully to jumia and konga</h2>
+                                            <div className="mt-4">
+
+                                                        <img src={Success} alt="Success" />
+                                     </div>
+                                     <div className="w-full">
+                                        <button className="text-white bg_color rounded-md w-full text-center py-2 mt-1 " onClick={onClose}>Done</button>
+                                     </div>
+                </section>
+        </>
+     );
+}
+ 
+export default Succes;

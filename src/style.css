@@ -1,0 +1,258 @@
+
+body{
+    overflow-x: hidden;
+    margin:0;
+    padding:0
+}
+.cont{
+    height: 100vh;
+}
+.sideBar{
+    height: 100%;
+    /* display: none; */
+    position: fixed;
+    width: 16%;
+    /* position: relative */
+}
+.card{
+  width: 263px
+}
+
+.mainPage{
+  margin-left: 16%;
+}
+.bg_color{
+    background-color: #F18701;
+}
+.text_color{
+    color:#F18701;
+}
+.Sidebar-border{
+    border-right: 4px solid #F18701;
+}
+.logout{
+    position: absolute;
+    bottom: 0;
+    width: 100%
+}
+.skeleton-loader {
+    background-color: white; /* Placeholder background color */
+    border-radius: 4px; /* Rounded corners for the placeholders */
+    overflow: hidden; /* Hide overflowing content */
+  }
+  
+  .skeleton-line {
+  
+    margin: 8px 0; /* Margin between lines */
+    background: linear-gradient(90deg, rgba(241, 135, 1, 0.10) 25%, rgba(225,225,225,.1) 50%, rgba(241, 135, 1, 0.10) 75%); /* Shimmering animation effect */
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite; /* Animation duration and repetition */
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  
+  .pendingOrder{
+    max-width: 1300px;
+    /* width: 100%; */
+
+    /* overflow-x: scroll */
+    ;
+  }
+  .pendingList{
+    /* width: %; */
+    overflow-x: auto;
+    /* display: flex; */
+  }
+  .loginpage{
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      width: 100%;
+  }
+  .LoginPage1{
+    display: flex;
+    width: 50%;
+    height: 100%;
+    background-color: rgb(241, 135, 1);
+  }
+  .LoginPage2{
+    display: flex;
+    width: 50%;  
+    height: 100%;
+    background-color: white;
+  }
+  .LoginPage2>div {
+    width: 70%
+    }
+  .parentLoginStyle{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    top:60px;
+    left: -60px
+  }
+  .loginStyle1{
+    width:340.56px;
+    height:130.56px;
+    /* left:3.80px; */
+    top: 0px;
+    position: absolute;
+    transform: rotate(60.38deg);
+    transform-origin: 0 0;
+    border-radius: 60.91px; 
+
+    border:20.45px #F6AF56 solid
+  }
+  .loginStyle2{
+    width:130.54px;
+    height:340.56px;
+    /* left:0px; */
+    top: 14.33px;
+    position: absolute;
+    border-radius: 60.91px; 
+    border: 20.45px #F6AF56 solid;
+    transform: rotate(35.38deg);
+
+    
+  }
+.Histo{
+  width: 510px;
+  height: 350px;
+  margin: 20px 0px 0px 0px;
+  padding: 15px;
+  border-radius: 12px
+
+}
+.Pie{
+  width: 510px;
+  height: 350px;
+  margin: 20px 0px 0px 0px;
+ 
+  padding: 15px;
+  border-radius: 12px
+}
+.pieBlueChart{
+  background-color: #470FF4;
+}
+.pieYellowChart{
+  background-color: #FFB930;
+}
+.pieGreenChart{
+  background-color: #44CF6C;
+}
+.pieRedChart{
+  background-color: #F24236
+}
+.chart{
+  width: 100%
+}
+.overlay {
+  display: block;
+  position: fixed!important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  /* transition: transform 0.3s ease, opacity 0.3s ease; */
+}
+.modal{
+  position: fixed!important;
+  top: 50%;
+  left: 50%;
+  width: 700px;
+  transform: translate(-50%,-50%) scale(0)  ;
+  transition: 200ms ease-in-out;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 10px 5px 40px 14px rgba(38.81, 136.75, 227.16, 0.13);
+  z-index: 999;
+  border-radius: 20px;
+}
+.reg_modal{
+  position: fixed!important;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  transform: translate(-50%,-50%) scale(1)  ;
+  transition: 200ms ease-in-out;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 10px 5px 40px 14px rgba(38.81, 136.75, 227.16, 0.13);
+  z-index: 999;
+  border-radius: 20px;
+}
+.modal-show {
+  transform: translate(-50%, -50%) scale(1);
+}
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 50%
+  /* display: none */
+}
+.prodImg{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 10px;
+  width: 50%
+}
+.marchant{
+  width: 10git 0%;
+  display: inline-flex;
+  flex-direction: row;
+  /* gap: 12px; */
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.lyncsImage{
+  width: 100%;
+}
+.lyncsImage img{
+  border-radius: 8px;
+  width: 90%;
+  height: 250px;
+  border-color: 1px #909090 solid;
+}
+.KongaImage{
+  width: 90%;
+  margin-left: auto;
+}
+.KongaImage .img{
+  /* border:1px #909090 solid; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border:1px #909090 solid; */
+  border-radius: 8px; 
+  height: 250px;
+}
+
+.moveIn{
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 200ms ease, transform 200ms ease;
+  overflow-x:hidden;
+}
+
+.moveIn.moveInLeft {
+    transform: translateX(100%); 
+  }  
+.moveInShow {
+    opacity: 1;
+    transform: scale(1);     
+  }
+  
