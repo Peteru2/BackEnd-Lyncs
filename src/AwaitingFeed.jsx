@@ -6,6 +6,7 @@ import useFetch from "./useFetch";
 import Pagination from './Pagination';
 import Funnel from "./images/FunnelSimple.svg"
 import closeButton from "./images/forbidden-2.svg"
+import airpod from "./images/airpod.png"
 
 
 
@@ -56,7 +57,11 @@ const AwaitingFeed = () => {
         "deliveryId":"#94045",
         "price":"$60",
         "numOfItems":30,
-        "view":"View"
+        "view":"View",
+        "img":airpod,
+        "prodName":"Airpod",
+        "prodPrice":"$5909",
+        "prodDescription":"The Apple AirPods 2nd Generation redefine the way you experience audio, setting new standards for wireless earbuds. With their iconic design, seamless connectivity, and unmatched sound quality, these earbuds are a true testament to Apple's commitment to innovation and user-centric technology."
     },
     {
         "deliveryId":"#64025",
@@ -194,7 +199,7 @@ const AwaitingFeed = () => {
                                                            <td>{item.deliveryId}</td>
                                                            <td>{item.price}</td>
                                                            <td>{item.numOfItems}</td>
-                                                           <td className="text_color cursor-pointer" onClick={()=>handleView(index)}>{item.view}</td>
+                                                           <td className="text_color cursor-pointer" onClick={()=>handleView(index)}>View</td>
 
                                                     </tbody>
                                                     
@@ -206,28 +211,40 @@ const AwaitingFeed = () => {
                                         </table>
 
                                         <div className="await_modal">
-                                                <div className="flex w-full">
-                                                        <h3>Product Details</h3>
-                                                <div className="ml-auto cursor-pointer" onClick={handlePreviewClose}>
+                                        {selectedView !== null && (
+                                        <div>
+                                                    <div className="flex w-full">
+                                                    <h3>Product Details</h3>
+                                                    <div className="ml-auto cursor-pointer" onClick={handlePreviewClose}>
                                                     <img src={closeButton} alt="closebutton" />
+                                                    </div>
+                                                    </div>
+                                                    <h2 className="text-sm text-gray-400">See product information</h2>
+
+                                                        <div className="flex justify-between gap-10 mt-4 ">
+                                                    <div className="prodImg  w-full">
+                                                        <img src={paginatedData[selectedView].img} alt="airpod" />
+                                                    </div>
+                                                    <div className="flex-col flex-container">
+                                                        <h5 className="text-sm text-gray-400">Product Name</h5>
+                                                        <h5 className=" text-black font-bold mt-2">{paginatedData[selectedView].prodName}</h5>
+                                                        <h5 className="text-sm text-gray-400 mt-3">Price</h5>
+                                                        <h5 className=" text-black font-bold mt-1">{paginatedData[selectedView].prodPrice}</h5>
+                                                        <h5 className="text-sm text-gray-400 mt-3">Description</h5>
+                                                        <p className="text-xs mt-2">
+                                                        {paginatedData[selectedView].prodDescription}
+                                                        </p>
+                                                    </div>
+                                                    <div className="h-20">
+                                                        <div>
+
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                        </div>
-                                        <h2 className="text-sm text-gray-400">See product information</h2>
-                                        <div className="flex justify-between gap-10 mt-4 ">
-                                        <div className="prodImg  w-full">
-                                            <img src={data.data[selectedItemIndex].products[0].picture1} alt="airpod" />
-                                        </div>
-                                        <div className="flex-col flex-container">
-                                            <h5 className="text-sm text-gray-400">Product Name</h5>
-                                            <h5 className=" text-black font-bold mt-2">{data.data[selectedItemIndex].products[0].name}</h5>
-                                            <h5 className="text-sm text-gray-400 mt-3">Price</h5>
-                                            <h5 className=" text-black font-bold mt-1">{data.data[selectedItemIndex].products[0].price}</h5>
-                                            <h5 className="text-sm text-gray-400 mt-3">Description</h5>
-                                            <p className="text-xs mt-2">
-                                            {data.data[selectedItemIndex].products[0].description}
-                                            </p>
-                                        </div>
-                                    </div>
+                                            </div>
+                                         )}
+                                               
+                                        
                                                     </div>
 
                                         </div>
