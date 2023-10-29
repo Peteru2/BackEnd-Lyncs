@@ -10,18 +10,14 @@ import Funnel from "./images/FunnelSimple.svg"
 // import { useSearch } from './SearchContext';
 const ClosedDelivery = () => {
   
-  const {data } = useFetch('https://api.lyncs.africa/staff/pending-deliveries')
-  
-   
-
-  const [currentPage, setCurrentPage] = useState(1);
+const {data} = useFetch('https://api.lyncs.africa/staff/pending-deliveries')
+const [currentPage, setCurrentPage] = useState(1);
 const itemsPerPage = 10; 
-
 const startIndex = (currentPage - 1) * itemsPerPage;
 const endIndex = startIndex + itemsPerPage;
-
-const paginatedData = data && data.data ? Object.values(data.data).slice(startIndex, endIndex) : [];
-
+const paginatedData = data && data.data ? Object.values(data.data).slice(startIndex, endIndex) : [
+  
+];
 const totalPages = data && data.data ? Math.ceil(Object.values(data.data).length / itemsPerPage) : 0;
 const currentSerialNumber = (currentPage - 1) * itemsPerPage + 1
  
@@ -34,8 +30,8 @@ const currentSerialNumber = (currentPage - 1) * itemsPerPage + 1
                         <section className="w-full mainPage">
                         <Navbar />
                         <div className="mx-6 my-4 ">
-                        <div className="flex w-full mt-2">                       
-                             <h3 className="text-2xl mt-2">Overview</h3>
+                        <div className="flex w-full mt-7">                       
+                             <h3 className="text-2xl ">Overview</h3>
                              <div className="ml-auto">
                             <img src={Funnel} alt="funnel"/>
                         </div>
@@ -57,8 +53,8 @@ const currentSerialNumber = (currentPage - 1) * itemsPerPage + 1
 
                         {paginatedData.map((item, index) => {
                              const serialNumber = currentSerialNumber + index;
+
                         return (
-                            
                             <div key={index}>
                             <div  className="grid grid-cols-6  gap-3 border-b-2 h-14 px-2 text-xs items-center">
                             <p>{serialNumber}</p>
@@ -67,22 +63,18 @@ const currentSerialNumber = (currentPage - 1) * itemsPerPage + 1
                             <p className="">{item.customer.name}</p>
                             <p>{item.ProductAvailableOn}</p>
                             <p>{item.delivered_at}</p>
-
-                            
                             </div>
                             </div>
                             )})}
 
-</div>
-</div>
-{totalPages > 1 && (
+            </div>
+            </div>
+                {totalPages > 1 && (
                      <Pagination totalPages={totalPages} onPageChange={setCurrentPage} />
-                             )}  
-                   
-                   
-                                               </div>
-                            </section>
-                    </div>
+                )}     
+                </div>
+                </section>
+            </div>
             </section>
         </>
      );

@@ -35,8 +35,8 @@ const PendDeliveries = () => {
                         <section className="w-full mainPage">
                         <Navbar />
                         <div className="mx-6 my-4 ">
-                        <div className="flex w-full">                       
-                             <h3 className="text-2xl mt-2">Overview</h3>
+                        <div className="flex w-full mt-7">                       
+                             <h3 className="text-2xl">Overview</h3>
                              <div className="ml-auto">
                             <img src={Funnel} alt="funnel"/>
                         </div>
