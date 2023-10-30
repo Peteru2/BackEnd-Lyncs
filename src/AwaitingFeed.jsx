@@ -48,7 +48,9 @@ const AwaitingFeed = () => {
       const [currentPage, setCurrentPage] = useState(1);
       const [selectedView, setSelectedView] = useState(null)
       const [preview, setPreview] = useState(false)
-  const itemsPerPage = 10; // Number of items to display per page
+      const [selectedMarchant, setSelectedMarchant] = useState(null)
+      const [marchantOffer, setMarchantOffer] = useState(false)
+  const itemsPerPage = 10; // Number of items to display per page 
 
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
@@ -182,8 +184,21 @@ const AwaitingFeed = () => {
     setPreview(true);
     
    }
+   const handleSelect = (index) =>{
+        setSelectedMarchant(index)
+        setMarchantOffer(true)
+   }
    const handlePreviewClose = () =>{
     setPreview(false);
+    setSelectedView(null); 
+    setSelectedMarchant(null)
+
+
+   }
+   const handleSelectClose = () => {
+    setMarchantOffer(false)
+    setSelectedMarchant(null)
+
 
    }
     return ( 
@@ -281,15 +296,30 @@ const AwaitingFeed = () => {
                                                     </div>
                                                 </div>
 
-                                                <button className="bg_color text-white rounded-md w-full text-sm py-1 mt-2">Select</button>
+                                                <button className="bg_color text-white rounded-md w-full text-sm py-1 mt-2" onClick={()=>handleSelect(index)}>Select</button>
                                                 </div>
                                                   
 
                                                 ))}
                                                        
                                                        </div>
+                                                       <div className={`selectedMarchant_modal ${marchantOffer ? "modal-show":""}`}>
+                                                    
+                                                       {selectedMarchant !== null && ( 
+                                                                <div className="">
+                                                                    <p className="text_color cursor-pointer" onClick={handleSelectClose}><i className="fa fa-arrow-left mr-2" ></i> Back</p>
+                                                                    <p className="my-4 font-bold text-sm">
+                                                                        Are you sure you want to select {paginatedData[selectedView].offer[selectedMarchant].marchantName} with offer "N{paginatedData[selectedView].offer[selectedMarchant].offerPrice}"
+                                                                    </p>
+                                                                    <div className="w-full flex">
+                                                                        <button className="text-white bg_color rounded-md w-24 py-1" >Proceed</button>
+                                                                        <button className="bg-white shadow-md rounded-md w-24 py-1 ml-auto" onClick={handleSelectClose}>Cancel</button>
+                                                                    </div>
+                                                                </div>
+                                                       )}
+                                          
 
-
+                                            </div>
                                             </div>
                                          )}
                                                
