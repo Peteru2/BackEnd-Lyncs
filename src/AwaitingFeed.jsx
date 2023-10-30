@@ -7,6 +7,7 @@ import Pagination from './Pagination';
 import Funnel from "./images/FunnelSimple.svg"
 import closeButton from "./images/forbidden-2.svg"
 import airpod from "./images/airpod.png"
+import user from "./images/User.svg"
 
 
 
@@ -235,12 +236,69 @@ const AwaitingFeed = () => {
                                                         {paginatedData[selectedView].prodDescription}
                                                         </p>
                                                     </div>
-                                                    <div className="h-20">
-                                                        <div>
-
-                                                        </div>
-                                                    </div>
+                                                    
                                                 </div>
+                                                <div className="h-44 flex justify-between flex-wrap overflow-y-scroll mt-20">
+                                                        <div className="h-20 my-10">                                                       
+                                                            <div className="flex justify-between items-center">
+                                                                <div className="mr-2">
+                                                                    <img src={user} alt ="user" />
+                                                                </div>
+                                                                <div>
+                                                                    <p className="font-bold">Offer A</p>
+                                                                    <p className="text-xs my-2">Marchant's Name: Johnson Adams</p>
+                                                                    <p className="text-xs my-2">Offer: N134,590</p>
+
+                                                                </div>
+                                                            </div>
+                                                            <button className="bg_color text-white rounded-md w-full text-sm py-1 mt-2">Select</button>
+                                                        </div>
+
+                                                        <div className="h-20 my-10">                                                       
+                                                            <div className="flex justify-between items-center">
+                                                                <div className="mr-2">
+                                                                    <img src={user} alt ="user" />
+                                                                </div>
+                                                                <div>
+                                                                    <p className="font-bold">Offer A</p>
+                                                                    <p className="text-xs my-2">Marchant's Name: Johnson Adams</p>
+                                                                    <p className="text-xs my-2">Offer: N134,590</p>
+
+                                                                </div>
+                                                            </div>
+                                                            <button className="bg_color text-white rounded-md w-full text-sm py-1 mt-2">Select</button>
+                                                        </div>
+                                                        <div className="h-20 my-10">                                                       
+                                                            <div className="flex justify-between items-center">
+                                                                <div className="mr-2">
+                                                                    <img src={user} alt ="user" />
+                                                                </div>
+                                                                <div>
+                                                                    <p className="font-bold">Offer A</p>
+                                                                    <p className="text-xs my-2">Marchant's Name: Johnson Adams</p>
+                                                                    <p className="text-xs my-2">Offer: N134,590</p>
+
+                                                                </div>
+                                                            </div>
+                                                            <button className="bg_color text-white rounded-md w-full text-sm py-1 mt-2">Select</button>
+                                                        </div>
+                                                        <div className="h-20 my-10">                                                       
+                                                            <div className="flex justify-between items-center">
+                                                                <div className="mr-2">
+                                                                    <img src={user} alt ="user" />
+                                                                </div>
+                                                                <div>
+                                                                    <p className="font-bold">Offer A</p>
+                                                                    <p className="text-xs my-2">Marchant's Name: Johnson Adams</p>
+                                                                    <p className="text-xs my-2">Offer: N134,590</p>
+
+                                                                </div>
+                                                            </div>
+                                                            <button className="bg_color text-white rounded-md w-full text-sm py-1 mt-2">Select</button>
+                                                        </div>
+
+
+                                                    </div>
                                             </div>
                                          )}
                                                
