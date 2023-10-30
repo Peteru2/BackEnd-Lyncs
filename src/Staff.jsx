@@ -291,7 +291,7 @@ const currentSerialNumber = (currentPage - 1) * itemsPerPage + 1
                                     
                                 <div>
                                 </div>
-                                <div className="hidden">
+                                <div className="">
                                 <Succes onClose ={handleCloseForm}/>
                                 </div>
                              </div>

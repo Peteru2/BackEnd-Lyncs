@@ -5,12 +5,12 @@ const Succes = ({onClose}) => {
     return ( 
         <>
             <section>
-                                    <div className="flex w-full">
+                                    <div className="flex w-full ">
                                         <h3>Successful!</h3>
                                         <div className="ml-auto cursor-pointer" onClick={onClose}><img src={closeButton} alt="closebutton" /></div>
                                         </div>
                                         <h2 className="text-sm text-gray-400">Your product has been pushed successfully to jumia and konga</h2>
-                                            <div className="mt-4">
+                                            <div className="mt-4 flex justify-center">
 
                                                         <img src={Success} alt="Success" />
                                      </div>

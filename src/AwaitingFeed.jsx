@@ -8,6 +8,7 @@ import Funnel from "./images/FunnelSimple.svg"
 import closeButton from "./images/forbidden-2.svg"
 import airpod from "./images/airpod.png"
 import user from "./images/User.svg"
+import Succes from "./success";
 
 
 
@@ -179,6 +180,7 @@ const AwaitingFeed = () => {
   ] 
   const totalPages = data && data.data ? Math.ceil(Object.values(data.data).length / itemsPerPage) : 0;
   const currentSerialNumber = (currentPage - 1) * itemsPerPage + 1
+  const [selectproceed, setSelectProceed] = useState(false)
   const handleView = (index) => {
     setSelectedView(index); 
     setPreview(true);
@@ -192,15 +194,30 @@ const AwaitingFeed = () => {
     setPreview(false);
     setSelectedView(null); 
     setSelectedMarchant(null)
-
-
-   }
-   const handleSelectClose = () => {
     setMarchantOffer(false)
-    setSelectedMarchant(null)
+
 
 
    }
+   const handleSelectProceedAndClose = (index) => {
+    setSelectProceed(index)
+
+    if(index === 0){
+        setMarchantOffer(false)
+        setSelectedMarchant(null)
+    }
+    if(index === 1){
+        setPreview(false);
+    setSelectedView(null); 
+    setSelectedMarchant(null)
+    setMarchantOffer(false)
+    }
+    if(index === 2){
+        setSelectProceed(null)
+    }
+
+   }
+  
     return ( 
         <>
              <section>
@@ -249,9 +266,9 @@ const AwaitingFeed = () => {
                                        
                                         </table>
 
-                                        <div className={`await_modal ${preview ? "modal-show":""}`}>
+                                        <div className={`await_modal ${preview || selectproceed === 1 ? "modal-show":""}`}>
                                         {selectedView !== null && (
-                                        <div >
+                                        <div className={selectproceed === 1?"hidden":"block"}>
                                             <div className="mb-32">
                                                     <div className="flex w-full">
                                                     <h3>Product Details</h3>
@@ -307,13 +324,13 @@ const AwaitingFeed = () => {
                                                     
                                                        {selectedMarchant !== null && ( 
                                                                 <div className="">
-                                                                    <p className="text_color cursor-pointer" onClick={handleSelectClose}><i className="fa fa-arrow-left mr-2" ></i> Back</p>
+                                                                    <p className="text_color cursor-pointer" onClick={()=> handleSelectProceedAndClose(0)}><i className="fa fa-arrow-left mr-2" ></i> Back</p>
                                                                     <p className="my-4 font-bold text-sm">
                                                                         Are you sure you want to select {paginatedData[selectedView].offer[selectedMarchant].marchantName} with offer "N{paginatedData[selectedView].offer[selectedMarchant].offerPrice}"
                                                                     </p>
                                                                     <div className="w-full flex">
-                                                                        <button className="text-white bg_color rounded-md w-24 py-1" >Proceed</button>
-                                                                        <button className="bg-white shadow-md rounded-md w-24 py-1 ml-auto" onClick={handleSelectClose}>Cancel</button>
+                                                                        <button className="text-white bg_color rounded-md w-24 py-1" onClick={()=> handleSelectProceedAndClose(1)} >Proceed</button>
+                                                                        <button className="bg-white shadow-md rounded-md w-24 py-1 ml-auto" onClick={()=> handleSelectProceedAndClose(0)}>Cancel</button>
                                                                     </div>
                                                                 </div>
                                                        )}
@@ -321,15 +338,18 @@ const AwaitingFeed = () => {
 
                                             </div>
                                             </div>
+
                                          )}
-                                               
-                                        
+                                                <div className={selectproceed === 1?"block":"hidden"}>
+                                                <Succes onClose={()=> handleSelectProceedAndClose(2)}/>
+                                        </div>
                                                     </div>
+                                       
                                                     <div className={preview?"overlay":""}></div>
                                         </div>
                                         {totalPages > 1 && (
-                     <Pagination totalPages={totalPages} onPageChange={setCurrentPage} />
-                             )}  
+                                     <Pagination totalPages={totalPages} onPageChange={setCurrentPage} />
+                                      )}  
                                 </section>    
                         </div>
                         </section>
