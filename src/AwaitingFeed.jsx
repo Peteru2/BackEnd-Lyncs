@@ -62,7 +62,30 @@ const AwaitingFeed = () => {
         "img":airpod,
         "prodName":"Airpod",
         "prodPrice":"$5909",
-        "prodDescription":"The Apple AirPods 2nd Generation redefine the way you experience audio, setting new standards for wireless earbuds. With their iconic design, seamless connectivity, and unmatched sound quality, these earbuds are a true testament to Apple's commitment to innovation and user-centric technology."
+        "prodDescription":"The Apple AirPods 2nd Generation redefine the way you experience audio, setting new standards for wireless earbuds. With their iconic design, seamless connectivity, and unmatched sound quality, these earbuds are a true testament to Apple's commitment to innovation and user-centric technology.",
+        "offer":[
+            {
+            "offerName":"Offer A",
+            "marchantName":"Johnson Adams",
+            "offerPrice": 129045,
+            },
+            {
+                "offerName":"Offer B",
+                "marchantName":"Olatt Adams",
+                "offerPrice": 45045,
+                },
+            {
+                    "offerName":"Offer A",
+                    "marchantName":"Johnson Adams",
+                    "offerPrice": 129045,
+                    },
+                    {
+                        "offerName":"Offer B",
+                        "marchantName":"Olatt Adams",
+                        "offerPrice": 45045,
+                        }
+    ],
+
     },
     {
         "deliveryId":"#64025",
@@ -179,7 +202,7 @@ const AwaitingFeed = () => {
                         </div>
                         </div>
                                     <h2 className="my-3">Pending Deliveries</h2>
-                                    <div className="w-full pendingOrder ">
+                                    <div className="w-full pendingOrder bg-white">
                                         {/* <img src={AirPod} alt="air" /> */}
                                     <table className="pendingList w-full">                       
                                         <th className="grid grid-cols-5 text-left text-white gap-3 bg_color h-10 px-2 text-xs rounded-t-md items-center">
@@ -211,9 +234,10 @@ const AwaitingFeed = () => {
                                        
                                         </table>
 
-                                        <div className="await_modal">
+                                        <div className={`await_modal ${preview ? "modal-show":""}`}>
                                         {selectedView !== null && (
-                                        <div>
+                                        <div >
+                                            <div className="mb-32">
                                                     <div className="flex w-full">
                                                     <h3>Product Details</h3>
                                                     <div className="ml-auto cursor-pointer" onClick={handlePreviewClose}>
@@ -238,73 +262,40 @@ const AwaitingFeed = () => {
                                                     </div>
                                                     
                                                 </div>
-                                                <div className="h-44 flex justify-between flex-wrap overflow-y-scroll mt-20">
-                                                        <div className="h-20 my-10">                                                       
-                                                            <div className="flex justify-between items-center">
-                                                                <div className="mr-2">
-                                                                    <img src={user} alt ="user" />
-                                                                </div>
-                                                                <div>
-                                                                    <p className="font-bold">Offer A</p>
-                                                                    <p className="text-xs my-2">Marchant's Name: Johnson Adams</p>
-                                                                    <p className="text-xs my-2">Offer: N134,590</p>
+                                                </div>
 
-                                                                </div>
-                                                            </div>
-                                                            <button className="bg_color text-white rounded-md w-full text-sm py-1 mt-2">Select</button>
-                                                        </div>
+                                                <div className="h-44 flex justify-between flex-wrap overflow-y-scroll mt-20 scrollbar-style">
+                                                    
+                                                {paginatedData[selectedView].offer.map((item, index)=>(
+                                                                       
+                                                <div className="h-20 my-10" key={index}>      
 
-                                                        <div className="h-20 my-10">                                                       
-                                                            <div className="flex justify-between items-center">
-                                                                <div className="mr-2">
-                                                                    <img src={user} alt ="user" />
-                                                                </div>
-                                                                <div>
-                                                                    <p className="font-bold">Offer A</p>
-                                                                    <p className="text-xs my-2">Marchant's Name: Johnson Adams</p>
-                                                                    <p className="text-xs my-2">Offer: N134,590</p>
-
-                                                                </div>
-                                                            </div>
-                                                            <button className="bg_color text-white rounded-md w-full text-sm py-1 mt-2">Select</button>
-                                                        </div>
-                                                        <div className="h-20 my-10">                                                       
-                                                            <div className="flex justify-between items-center">
-                                                                <div className="mr-2">
-                                                                    <img src={user} alt ="user" />
-                                                                </div>
-                                                                <div>
-                                                                    <p className="font-bold">Offer A</p>
-                                                                    <p className="text-xs my-2">Marchant's Name: Johnson Adams</p>
-                                                                    <p className="text-xs my-2">Offer: N134,590</p>
-
-                                                                </div>
-                                                            </div>
-                                                            <button className="bg_color text-white rounded-md w-full text-sm py-1 mt-2">Select</button>
-                                                        </div>
-                                                        <div className="h-20 my-10">                                                       
-                                                            <div className="flex justify-between items-center">
-                                                                <div className="mr-2">
-                                                                    <img src={user} alt ="user" />
-                                                                </div>
-                                                                <div>
-                                                                    <p className="font-bold">Offer A</p>
-                                                                    <p className="text-xs my-2">Marchant's Name: Johnson Adams</p>
-                                                                    <p className="text-xs my-2">Offer: N134,590</p>
-
-                                                                </div>
-                                                            </div>
-                                                            <button className="bg_color text-white rounded-md w-full text-sm py-1 mt-2">Select</button>
-                                                        </div>
-
-
+                                                <div className="flex justify-between items-center">
+                                                    <div className="mr-2">
+                                                        <img src={user} alt ="user" />
                                                     </div>
+                                                    <div>
+                                                        <p className="font-bold">{item.offerName}</p>
+                                                        <p className="text-xs my-2">Marchant's Name: {item.marchantName}</p>
+                                                        <p className="text-xs my-2">Offer: {item.offerPrice}</p>
+                                                    </div>
+                                                </div>
+
+                                                <button className="bg_color text-white rounded-md w-full text-sm py-1 mt-2">Select</button>
+                                                </div>
+                                                  
+
+                                                ))}
+                                                       
+                                                       </div>
+
+
                                             </div>
                                          )}
                                                
                                         
                                                     </div>
-
+                                                    <div className={preview?"overlay":""}></div>
                                         </div>
                                         {totalPages > 1 && (
                      <Pagination totalPages={totalPages} onPageChange={setCurrentPage} />

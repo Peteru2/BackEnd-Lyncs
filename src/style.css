@@ -196,7 +196,7 @@ body{
   top: 50%;
   left: 50%;
   width: 850px;
-  transform: translate(-50%,-50%) scale(1)  ;
+  transform: translate(-50%,-50%) scale(0)  ;
   transition: 200ms ease-in-out;
   background-color: #fff;
   padding: 20px;
@@ -267,5 +267,28 @@ body{
 .moveInShow {
     opacity: 1;
     transform: scale(1);     
+  }
+  .scrollbar-style::-webkit-scrollbar {
+    width: 8px; /* Adjust the width as needed */
+  }
+  
+  .scrollbar-style::-webkit-scrollbar-thumb {
+    background-color: #F18701; 
+    border-radius: 6px; /* Rounded corners */
+    
+  }
+  
+  .scrollbar-style::-webkit-scrollbar-track {
+    background-color: rgba(241, 135, 1,.2); 
+    border-radius: 6px; /* Rounded corners */
+
+   
+  }
+  
+  /* Add these styles for Firefox */
+  .scrollbar-style {
+    scrollbar-color: #F18701 #F18701;
+    padding-right: 15px;
+
   }
   
