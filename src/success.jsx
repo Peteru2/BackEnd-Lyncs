@@ -1,6 +1,6 @@
 import closeButton from "./images/forbidden-2.svg"
 import Success from "./images/success.png"
-const Succes = ({onClose}) => {
+const Succes = ({onClose, statement}) => {
 
     return ( 
         <>
@@ -9,7 +9,7 @@ const Succes = ({onClose}) => {
                                         <h3>Successful!</h3>
                                         <div className="ml-auto cursor-pointer" onClick={onClose}><img src={closeButton} alt="closebutton" /></div>
                                         </div>
-                                        <h2 className="text-sm text-gray-400">Your product has been pushed successfully to jumia and konga</h2>
+                                        <h2 className="text-sm text-gray-400">{statement && <div>{statement}</div>}</h2>
                                             <div className="mt-4 flex justify-center">
 
                                                         <img src={Success} alt="Success" />

@@ -54,6 +54,11 @@ const handleCloseForm = () =>{
             // position: toast.POSITION.TOP_CENTER,
           })
     }
+    else if (formData.image.trim() ===null)  {
+      toast.error("Image is required", {
+          position: toast.POSITION.TOP_CENTER,
+        })
+      }
             else if (!formData.email.trim()) {
                     toast.error("Email is required", {
                         position: toast.POSITION.TOP_CENTER,
@@ -73,7 +78,7 @@ const handleCloseForm = () =>{
                         position: toast.POSITION.TOP_CENTER,
                       })
                 }
-
+                
     const url = 'https://api.lyncs.africa/staff/register';
 
     const formDataToSend = new FormData();

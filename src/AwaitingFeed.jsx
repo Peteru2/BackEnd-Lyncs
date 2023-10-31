@@ -1,6 +1,6 @@
 import SideBar from "./SideBar";
 import Navbar from "./Navbar";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import useFetch from "./useFetch";
 
 import Pagination from './Pagination';
@@ -9,6 +9,7 @@ import closeButton from "./images/forbidden-2.svg"
 import airpod from "./images/airpod.png"
 import user from "./images/User.svg"
 import Succes from "./success";
+
 
 
 
@@ -51,7 +52,8 @@ const AwaitingFeed = () => {
       const [preview, setPreview] = useState(false)
       const [selectedMarchant, setSelectedMarchant] = useState(null)
       const [marchantOffer, setMarchantOffer] = useState(false)
-  const itemsPerPage = 10; // Number of items to display per page 
+      const [statement, setStatement] = useState('')
+      const itemsPerPage = 10; // Number of items to display per page 
 
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
@@ -158,26 +160,6 @@ const AwaitingFeed = () => {
     }
   ];
 
-  const marchants = [
-    {
-        "deliveryId":"#94045",
-        "price":"$60",
-        "numOfItems":30,
-        "view":"View"
-    },
-    {
-        "deliveryId":"#64025",
-        "price":"$100",
-        "numOfItems":90,
-        "view":"View"
-    },
-    {
-        "deliveryId":"#89064",
-        "price":"$50",
-        "numOfItems":50,
-        "view":"View"
-    },
-  ] 
   const totalPages = data && data.data ? Math.ceil(Object.values(data.data).length / itemsPerPage) : 0;
   const currentSerialNumber = (currentPage - 1) * itemsPerPage + 1
   const [selectproceed, setSelectProceed] = useState(false)
@@ -217,6 +199,13 @@ const AwaitingFeed = () => {
     }
 
    }
+  
+   useEffect(() => {
+    if (selectedMarchant !== null) {
+      setStatement(paginatedData[selectedView].offer[selectedMarchant].marchantName);
+    }
+  }, [selectedMarchant, selectedView, paginatedData]);
+
   
     return ( 
         <>
@@ -313,7 +302,7 @@ const AwaitingFeed = () => {
                                                     </div>
                                                 </div>
 
-                                                <button className="bg_color text-white rounded-md w-full text-sm py-1 mt-2" onClick={()=>handleSelect(index)}>Select</button>
+                                                <button className="bg_color text-white rounded-md w-full text-sm py-1 mt-2 outline-none" onClick={()=>handleSelect(index)}>Select</button>
                                                 </div>
                                                   
 
@@ -328,11 +317,13 @@ const AwaitingFeed = () => {
                                                                     <p className="my-4 font-bold text-sm">
                                                                         Are you sure you want to select {paginatedData[selectedView].offer[selectedMarchant].marchantName} with offer "N{paginatedData[selectedView].offer[selectedMarchant].offerPrice}"
                                                                     </p>
-                                                                    <div className="w-full flex">
+                                                                    <div className="w-full flex text-sm">
                                                                         <button className="text-white bg_color rounded-md w-24 py-1" onClick={()=> handleSelectProceedAndClose(1)} >Proceed</button>
-                                                                        <button className="bg-white shadow-md rounded-md w-24 py-1 ml-auto" onClick={()=> handleSelectProceedAndClose(0)}>Cancel</button>
+                                                                        <button className="shadow-md  custom_border  rounded-md w-24 py-1 ml-auto" onClick={()=> handleSelectProceedAndClose(0)}>Cancel</button>
                                                                     </div>
+
                                                                 </div>
+                                                                
                                                        )}
                                           
 
@@ -341,11 +332,21 @@ const AwaitingFeed = () => {
 
                                          )}
                                                 <div className={selectproceed === 1?"block":"hidden"}>
-                                                <Succes onClose={()=> handleSelectProceedAndClose(2)}/>
+                                                <Succes onClose={()=> handleSelectProceedAndClose(2)} 
+                                                    statement ={`
+                                                   
+                                              
+                                                         You have approved product sale to "${statement}"`
+                                                        }
+                                                      />
+
                                         </div>
                                                     </div>
                                        
-                                                    <div className={preview?"overlay":""}></div>
+                                                    <div className={preview || selectproceed === 1?"overlay":""}></div>
+                                                    <div className={marchantOffer ?"select_overlay":""}></div>
+                                                    
+                                                   
                                         </div>
                                         {totalPages > 1 && (
                                      <Pagination totalPages={totalPages} onPageChange={setCurrentPage} />
