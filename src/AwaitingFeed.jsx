@@ -9,6 +9,7 @@ import closeButton from "./images/forbidden-2.svg"
 import airpod from "./images/airpod.png"
 import user from "./images/User.svg"
 import Succes from "./success";
+import caretLeft from "./images/CaretDown.svg"
 
 
 
@@ -309,45 +310,42 @@ const AwaitingFeed = () => {
                                                 ))}
                                                        
                                                        </div>
-                                                       <div className={`selectedMarchant_modal ${marchantOffer ? "modal-show":""}`}>
-                                                    
-                                                       {selectedMarchant !== null && ( 
-                                                                <div className="">
-                                                                    <p className="text_color cursor-pointer" onClick={()=> handleSelectProceedAndClose(0)}><i className="fa fa-arrow-left mr-2" ></i> Back</p>
-                                                                    <p className="my-4 font-bold text-sm">
-                                                                        Are you sure you want to select {paginatedData[selectedView].offer[selectedMarchant].marchantName} with offer "N{paginatedData[selectedView].offer[selectedMarchant].offerPrice}"
-                                                                    </p>
-                                                                    <div className="w-full flex text-sm">
-                                                                        <button className="text-white bg_color rounded-md w-24 py-1" onClick={()=> handleSelectProceedAndClose(1)} >Proceed</button>
-                                                                        <button className="shadow-md  custom_border  rounded-md w-24 py-1 ml-auto" onClick={()=> handleSelectProceedAndClose(0)}>Cancel</button>
-                                                                    </div>
-
-                                                                </div>
-                                                                
-                                                       )}
-                                          
-
-                                            </div>
+                                                      
                                             </div>
 
                                          )}
-                                                <div className={selectproceed === 1?"block":"hidden"}>
+                                          
+                                          <div className={selectproceed === 1?"block":"hidden"}>
                                                 <Succes onClose={()=> handleSelectProceedAndClose(2)} 
-                                                    statement ={`
-                                                   
-                                              
-                                                         You have approved product sale to "${statement}"`
-                                                        }
+                                                    statement ={` You have approved product sale to "${statement}"`}
                                                       />
-
+                                                </div>
+                                                   
                                         </div>
+                                        <div className={`selectedMarchant_modal ${marchantOffer ? "modal-show":""}`}>
+                                                    
+                                                    {selectedMarchant !== null && ( 
+                                                             <div className="">
+                                                                 <p className="text_color cursor-pointer flex items-center" onClick={()=> handleSelectProceedAndClose(0)}><img src={caretLeft}  className="mr-1"alt="caretLeft" />  Back</p>
+                                                                 <p className="my-4 font-bold text-sm">
+                                                                     Are you sure you want to select {paginatedData[selectedView].offer[selectedMarchant].marchantName} with offer "N{paginatedData[selectedView].offer[selectedMarchant].offerPrice}"
+                                                                 </p>
+                                                                 <div className="w-full flex text-sm">
+                                                                     <button className="text-white bg_color rounded-md w-24 py-1" onClick={()=> handleSelectProceedAndClose(1)} >Proceed</button>
+                                                                     <button className="shadow-md  custom_border  rounded-md w-24 py-1 ml-auto" onClick={()=> handleSelectProceedAndClose(0)}>Cancel</button>
+                                                                 </div>
+
+                                                             </div>
+                                                             
+                                                    )}
+                                       
+
+                                         </div>
+                                                
                                                     </div>
                                        
                                                     <div className={preview || selectproceed === 1?"overlay":""}></div>
                                                     <div className={marchantOffer ?"select_overlay":""}></div>
-                                                    
-                                                   
-                                        </div>
                                         {totalPages > 1 && (
                                      <Pagination totalPages={totalPages} onPageChange={setCurrentPage} />
                                       )}  

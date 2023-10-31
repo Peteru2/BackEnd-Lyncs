@@ -26,7 +26,7 @@ const Pied = () => {
               {
                 label: [],
                 data: [10, 20, 15, 25,],
-                backgroundColor: ["rgb(241, 135, 1)","#44CF6C","#F24236","#470FF4"],
+                backgroundColor: ["rgb(241, 135, 1)","#F24236","#44CF6C","#470FF4"],
                 barThickness: 30
               },
              

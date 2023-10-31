@@ -296,8 +296,8 @@ const currentSerialNumber = (currentPage - 1) * itemsPerPage + 1
                                     
                                 <div>
                                 </div>
-                                <div className="hidden">
-                                <Succes onClose ={handleCloseForm}/>
+                                <div className="">
+                                <Succes onClose ={handleCloseForm} statement={`You have activated "${formData.firstName +" "+ formData.lastName}" successfully`}/>
                                 </div>
                              </div>
                             <div className={showForm?"overlay":""}></div>
