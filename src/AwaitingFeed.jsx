@@ -10,6 +10,7 @@ import airpod from "./images/airpod.png"
 import user from "./images/User.svg"
 import Succes from "./success";
 import caretLeft from "./images/CaretDown.svg"
+import ImageSlider from "./imageSlider";
 
 
 
@@ -65,7 +66,12 @@ const AwaitingFeed = () => {
         "price":"$60",
         "numOfItems":30,
         "view":"View",
-        "img":airpod,
+        "img":[
+                airpod,
+                airpod,
+                airpod,
+ 
+        ],
         "prodName":"Airpod",
         "prodPrice":"$5909",
         "prodDescription":"The Apple AirPods 2nd Generation redefine the way you experience audio, setting new standards for wireless earbuds. With their iconic design, seamless connectivity, and unmatched sound quality, these earbuds are a true testament to Apple's commitment to innovation and user-centric technology.",
@@ -270,7 +276,7 @@ const AwaitingFeed = () => {
 
                                                         <div className="flex justify-between gap-10 mt-4 ">
                                                     <div className="prodImg  w-full">
-                                                        <img src={paginatedData[selectedView].img} alt="airpod" />
+                                                    <ImageSlider imageSlides={paginatedData[selectedView].img} />
                                                     </div>
                                                     <div className="flex-col flex-container">
                                                         <h5 className="text-sm text-gray-400">Product Name</h5>

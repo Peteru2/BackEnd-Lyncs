@@ -265,8 +265,8 @@ const currentSerialNumber = (currentPage - 1) * itemsPerPage + 1
                                        
                                     </label>
                                     </div>
-                              <div className="flex rounded-lg bg_color border-2 p-2">
-                              <div className="mr-2">
+                              <div className="flex rounded-lg custom_border p-2">
+                              <div className="mr-2 bg_color flex items-center">
                                 <img src={camera} alt="cam" />
                               </div>
                               <div className="w-full">

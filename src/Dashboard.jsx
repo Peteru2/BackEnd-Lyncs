@@ -11,7 +11,7 @@ import Histo from "./Histo";
 import { useState, useEffect} from 'react'
 // import { useAuth } from './AuthContext';
 // import { useNavigate } from 'react-router-dom';
-
+import ImageSlider from "./imageSlider";
 
 
   
@@ -113,9 +113,14 @@ const Dashboard = () => {
                                     <Histo />
                                     <Pied />                     
                      </div>
+
                      </div>
+                     <ImageSlider />
+
                     </div>
+                    
             )}
+
                     </section>
             </div>
             </section>
