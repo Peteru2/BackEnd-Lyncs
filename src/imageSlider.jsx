@@ -3,8 +3,12 @@ import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 
 const ImageSlider = ({imageSlides}) => {
-    const indicators = (index) => (<div className="indicator">{index + 1}/ </div>);
+    const [currentSlide, setCurrentSlide] = React.useState(0);
 
+    const indicators = (index) => {
+        setCurrentSlide(index);
+        return <div className="indicator">{index + 1}/{imageSlides.length}</div>;
+    };
     return (
         <Slide
         transitionDuration={500}
