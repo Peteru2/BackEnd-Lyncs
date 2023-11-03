@@ -328,7 +328,7 @@ const AwaitingFeed = () => {
                                                 </div>
                                                    
                                         </div>
-                                        <div className={`selectedMarchant_modal ${marchantOffer ? "modal-show":""}`}>
+                                        <div className={`selectedMarchant_modal ${marchantOffer ? "select_modal-show":""}`}>
                                                     
                                                     {selectedMarchant !== null && ( 
                                                              <div className="">

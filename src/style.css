@@ -220,10 +220,10 @@ body{
 
 .selectedMarchant_modal{
   position: fixed!important;
-  top: 50%;
+  top: -10%;
   left: 50%;
   width: 500px;
-  transform: translate(-50%,-50%) scale(0)  ;
+  transform: translate(-50%,-50%)   ;
   transition: 200ms ease-in-out;
   background-color: #fff;
   padding: 20px;
@@ -232,6 +232,10 @@ body{
   border-radius: 20px;
 }
 
+.select_modal-show  {
+  transform: translate(-50%, -50%) ;
+  top:50%
+}
 .modal-show {
   transform: translate(-50%, -50%) scale(1);
 }
