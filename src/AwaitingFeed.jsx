@@ -153,18 +153,7 @@ const AwaitingFeed = () => {
         "numOfItems":30,
         "view":"View"
     },
-    {
-        "deliveryId":"#64025",
-        "price":"$100",
-        "numOfItems":90,
-        "view":"View"
-    },
-    {
-        "deliveryId":"#89064",
-        "price":"$50",
-        "numOfItems":50,
-        "view":"View"
-    }
+    
   ];
 
   const totalPages = data && data.data ? Math.ceil(Object.values(data.data).length / itemsPerPage) : 0;
