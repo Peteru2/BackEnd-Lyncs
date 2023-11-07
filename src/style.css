@@ -317,6 +317,23 @@ body{
    
   }
   
+  .scrollbar-style::-moz-scrollbar {
+    width: 8px; /* Adjust the width as needed */
+  }
+  
+  .scrollbar-style::-moz-scrollbar-thumb {
+    background-color: #F18701; 
+    border-radius: 6px; /* Rounded corners */
+    
+  }
+  
+  .scrollbar-style::-moz-scrollbar-track {
+    background-color: rgba(241, 135, 1,.2); 
+    border-radius: 6px; /* Rounded corners */
+
+   
+  }
+  
   /* Add these styles for Firefox */
   .scrollbar-style {
     scrollbar-color: #F18701 #F18701;
