@@ -21,6 +21,7 @@ const Staff = () => {
   });
 const [showForm, setShowForm] = useState(false)
 const [modalForm, setModalForm] = useState(false)
+const [showSuccessComp, setShowSuccessComp] = useState(false)
 const handleShowForm = () =>{
     setShowForm(true)
     setModalForm(true)
@@ -28,6 +29,7 @@ const handleShowForm = () =>{
 
 const handleCloseForm = () =>{
     setShowForm(false)
+    setShowSuccessComp(false)
 }
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -44,6 +46,7 @@ const handleCloseForm = () =>{
 
     const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
   const phoneRegex = /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}\)?[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
+  setShowSuccessComp(true)
     if(formData.firstName.trim() === ''){
         toast.error("First Name is required", {
             // position: toast.POSITION.TOP_CENTER,
@@ -54,11 +57,7 @@ const handleCloseForm = () =>{
             // position: toast.POSITION.TOP_CENTER,
           })
     }
-    else if (formData.image.trim() ===null)  {
-      toast.error("Image is required", {
-          position: toast.POSITION.TOP_CENTER,
-        })
-      }
+    
             else if (!formData.email.trim()) {
                     toast.error("Email is required", {
                         position: toast.POSITION.TOP_CENTER,
@@ -78,6 +77,11 @@ const handleCloseForm = () =>{
                         position: toast.POSITION.TOP_CENTER,
                       })
                 }
+                else if (formData.image === null)  {
+                      toast.error("Image is required", {
+                          position: toast.POSITION.TOP_CENTER,
+                        })
+                      }
                 
     const url = 'https://api.lyncs.africa/staff/register';
 
@@ -190,6 +194,7 @@ const currentSerialNumber = (currentPage - 1) * itemsPerPage + 1
                              )}  
 
                              <div className={` ${showForm? "modal-show": ""} reg_modal `}>
+                              <div className={showSuccessComp? "hidden":"block"}>
                                 <div className="flex w-full">
                                 <h3 className="font-bold">Create new staff</h3>
                                 <div onClick={handleCloseForm} className="ml-auto cursor-pointer">
@@ -293,10 +298,11 @@ const currentSerialNumber = (currentPage - 1) * itemsPerPage + 1
                                 </div>
                                 </form>
                                 </div>
+                                </div>
                                     
                                 <div>
                                 </div>
-                                <div className="">
+                                <div className={showSuccessComp?"block": "hidden"}>
                                 <Succes onClose ={handleCloseForm} statement={`You have activated "${formData.firstName +" "+ formData.lastName}" successfully`}/>
                                 </div>
                              </div>
