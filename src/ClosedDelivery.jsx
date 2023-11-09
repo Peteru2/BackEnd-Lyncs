@@ -10,7 +10,7 @@ import Funnel from "./images/FunnelSimple.svg"
 // import { useSearch } from './SearchContext';
 const ClosedDelivery = () => {
   
-const {data} = useFetch('https://api.lyncs.africa/staff/pending-deliveries')
+const {data} = useFetch('https://api.lyncs.africa/staff/closed-deliveries')
 const [currentPage, setCurrentPage] = useState(1);
 const itemsPerPage = 10; 
 const startIndex = (currentPage - 1) * itemsPerPage;
@@ -58,7 +58,7 @@ const currentSerialNumber = (currentPage - 1) * itemsPerPage + 1
                             <div key={index}>
                             <div  className="grid grid-cols-6  gap-3 border-b-2 h-14 px-2 text-xs items-center">
                             <p>{serialNumber}</p>
-                            <p>{item.marchant.name}</p>
+                            <p>{item.products[0]}</p>
                             {/* <p>{products.order_id}</p> */}
                             <p className="">{item.customer.name}</p>
                             <p>{item.ProductAvailableOn}</p>

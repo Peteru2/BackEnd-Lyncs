@@ -37,6 +37,16 @@ const PendOrder = () => {
         },
         // Add more options as needed
       ];
+
+      const option = {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+  hour: "2-digit",
+  minute: "2-digit",
+  second: "2-digit",
+  timeZone: "UTC", // Adjust the time zone as needed
+};
     const [preview, setPreview] = useState(false)
     const [push, setPush] = useState(false)
     const [selectedItemIndex, setSelectedItemIndex] = useState(null);
@@ -190,7 +200,7 @@ const PendOrder = () => {
                                         <p>{serialNumber}</p>
                                         <p>{item.Product}</p>
                                         <p>{products.order_product.order_id}</p>
-                                        <p>{products.order_product.createdAt}</p>
+                                        <p>{new Date(products.order_product.createdAt).toLocaleString("en-US", option)}</p>
                                         <p>{products.order_product.quantity}</p>
                                         <p>{item.OrderCateg}</p>
                                         <p onClick={() => handlePreview(index)} className="text_color cursor-pointer">View</p>
