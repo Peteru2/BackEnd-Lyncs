@@ -4,6 +4,8 @@ import Navbar from "./Navbar"
 import Pagination from './Pagination';
 import { useState, useEffect } from "react";
 import axios from 'axios' 
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 import RegForm from "./RegForm";
 
@@ -108,6 +110,7 @@ const currentSerialNumber = (currentPage - 1) * itemsPerPage + 1
                         </div>
 
                         </section>
+                        <ToastContainer />
 
                         </div>
                         </section>

@@ -164,7 +164,7 @@ const PendOrder = () => {
                         </div>
 
                         <h2 className="my-3">Pending Orders</h2>
-                        <div className="bg-white pendingOrder ">
+                        <div className="bg-white pendingOrder  rounded-md">
                             {/* <img src={AirPod} alt="air" /> */}
                         <div className="pendingList">                       
                              <div className="grid grid-cols-8 text-white gap-3 bg_color h-10 px-2 text-xs rounded-t-md items-center">
@@ -186,7 +186,7 @@ const PendOrder = () => {
                                     return (
                                         <>
                                     <div key={index}>
-                                        <div className="grid grid-cols-8 gap-3 border-b-2 h-14 px-2 text-xs items-center">
+                                        <div className="grid grid-cols-8 gap-3 rounded-b-md border-b-2 h-14 px-2 text-xs items-center">
                                         <p>{serialNumber}</p>
                                         <p>{item.Product}</p>
                                         <p>{products.order_product.order_id}</p>
@@ -215,7 +215,7 @@ const PendOrder = () => {
                                     <h2 className="text-sm text-gray-400">See product information</h2>
                                     <div className="flex justify-between gap-10 mt-4 ">
                                         <div className="prodImg  w-full">
-                                            <img src={data.data[selectedItemIndex].products[0].picture1} alt="airpod" />
+                                            <img src={data.data[selectedItemIndex].products[0].picture1} className="h-60" alt="airpod" />
                                         </div>
                                         <div className="flex-col flex-container">
                                             <h5 className="text-sm text-gray-400">Product Name</h5>
