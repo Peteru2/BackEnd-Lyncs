@@ -1,5 +1,5 @@
-import closeButton from "./images/forbidden-2.svg"
-import Success from "./images/success.png"
+import closeButton from "../images/forbidden-2.svg"
+import Success from "../images/success.png"
 const Succes = ({onClose, statement}) => {
 
     return ( 

@@ -1,16 +1,16 @@
 
 
-import Dashboard from './Dashboard';
+import Dashboard from './views/Dashboard';
 // import Login from './Login'; 
-import PendOrder from './PendOrder';
-import PendDeliveries from './PendDeliveries';
+import PendOrder from './views/PendOrder';
+import PendDeliveries from './views/PendDeliveries';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { SearchProvider } from './SearchContext'; 
+import { SearchProvider } from './components/SearchContext'; 
 import "./style.css"
-import AwaitingFeed from './AwaitingFeed';
-import { AuthProvider } from './AuthContext';
-import ClosedDelivery from './ClosedDelivery';
-import Staff from './Staff';
+import AwaitingFeed from './views/AwaitingFeed';
+import { AuthProvider } from './components/AuthContext';
+import ClosedDelivery from './views/ClosedDelivery';
+import Staff from './views/Staff';
 import "./index.css"
 
 function App() {

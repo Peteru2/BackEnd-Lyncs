@@ -1,9 +1,9 @@
-import SideBar from "./SideBar";
-import Navbar from "./Navbar";
+import SideBar from "../components/SideBar";
+import Navbar from "../components/Navbar";
 
-import useFetch from "./useFetch";
-import Pagination from './Pagination';
-import Funnel from "./images/FunnelSimple.svg"
+import useFetch from "../components/useFetch";
+import Pagination from '../components/Pagination';
+import Funnel from "../images/FunnelSimple.svg"
 
 import {  useState } from "react";
 

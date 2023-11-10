@@ -1,5 +1,5 @@
 // import ProImg from "./images/ProImg.svg"
-import ProImg from "./images/fullImgProf.jpg"
+import ProImg from "../images/fullImgProf.jpg"
 import { useSearch } from './SearchContext';
 const Navbar = () => {
 

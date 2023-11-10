@@ -1,18 +1,18 @@
-import SideBar from "./SideBar";
-import Navbar from "./Navbar";
+import SideBar from "../components/SideBar";
+import Navbar from "../components/Navbar";
 
 // import Pod from "./images/airpod.png"
-import closeButton from "./images/forbidden-2.svg"
-import useFetch from "./useFetch";
+import closeButton from "../images/forbidden-2.svg"
+import useFetch from "../components/useFetch";
 import { useState, useEffect } from "react";
-import clanMarchant from "./images/lyncsMarch.png"
-import kongaMarchant from "./images/konga.png"
-import Jiji from "./images/Jiji.png"
-import Ali from "./images/ali.png"
-import Success from "./images/success.png"
-import MarketImg from "./MarketImg";
-import Pagination from './Pagination';
-import Funnel from "./images/FunnelSimple.svg"
+import clanMarchant from "../images/lyncsMarch.png"
+import kongaMarchant from "../images/konga.png"
+import Jiji from "../images/Jiji.png"
+import Ali from "../images/ali.png"
+import Success from "../images/success.png"
+import MarketImg from "../components/MarketImg";
+import Pagination from '../components/Pagination';
+import Funnel from "../images/FunnelSimple.svg"
 
 
 

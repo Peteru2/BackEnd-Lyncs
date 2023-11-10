@@ -1,13 +1,13 @@
-import SideBar from "./SideBar";
-import Navbar from "./Navbar"
+import SideBar from "../components/SideBar";
+import Navbar from "../components/Navbar"
 // import useFetch from "./useFetch";
-import Pagination from './Pagination';
+import Pagination from '../components/Pagination';
 import { useState, useEffect } from "react";
 import axios from 'axios' 
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
-import RegForm from "./RegForm";
+import RegForm from "../components/RegForm";
 
 
 const Staff = () => {

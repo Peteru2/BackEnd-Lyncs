@@ -1,13 +1,13 @@
-import SideBar from "./SideBar";
-import Navbar from "./Navbar"
+import SideBar from "../components/SideBar";
+import Navbar from "../components/Navbar"
 
-import Frame1 from  "./images/Frame1.svg"
-import Vector1 from "./images/Vector1.svg"
-import smallVect from "./images/diagram.svg"
-import Funnel from "./images/FunnelSimple.svg"
-import Loader from "./Loader";
-import Pied from "./Pie";
-import Histo from "./Histo";
+import Frame1 from  "../images/Frame1.svg"
+import Vector1 from "../images/Vector1.svg"
+import smallVect from "../images/diagram.svg"
+import Funnel from "../images/FunnelSimple.svg"
+import Loader from "../components/Loader";
+import Pied from "../components/Pie";
+import Histo from "../components/Histo";
 import { useState, useEffect} from 'react'
 // import { useAuth } from './AuthContext';
 // import { useNavigate } from 'react-router-dom';
