@@ -109,9 +109,9 @@ const handleCloseForm = () =>{
                                 </div >
                                 <div className={`${modalForm? "block" :"hidden"}`}>
                                 <form className="" onSubmit={handleSubmit}>
-                                    <div className="my-3">
+                                    <div className="my-2">
                                         <label className="font-bold ">First Name</label>
-                                        <div className="border-2 w-full mt-1  rounded-lg py-2 px-2">
+                                        <div className="border-2 w-full mt-1  rounded-lg py-1 px-2">
                                             <input type="text" 
                                             className="w-full outline-none"
                                             name="firstName"
@@ -121,9 +121,9 @@ const handleCloseForm = () =>{
                                             />
                                         </div>
                                     </div>
-                                    <div className="my-3">
+                                    <div className="my-2">
                                         <label className="font-bold ">Last Name</label>
-                                        <div className="border-2 w-full mt-1  rounded-lg py-2 px-2">
+                                        <div className="border-2 w-full mt-1  rounded-lg py-1 px-2">
                                             <input type="text" 
                                             className="w-full outline-none"
                                             name="lastName"
@@ -133,9 +133,9 @@ const handleCloseForm = () =>{
                                             />
                                         </div>
                                     </div>
-                                    <div className="my-3">
+                                    <div className="my-2">
                                         <label className="font-bold ">Email</label>
-                                        <div className="border-2 w-full mt-1  rounded-lg py-2 px-2">
+                                        <div className="border-2 w-full mt-1  rounded-lg py-1 px-2">
                                             <input 
                                             className="w-full outline-none"
                                             type="email"
@@ -146,9 +146,9 @@ const handleCloseForm = () =>{
                                             />
                                         </div>
                                     </div>
-                                    <div className="my-3">
+                                    <div className="my-2">
                                         <label className="font-bold ">Phone Number</label>
-                                        <div className="border-2 w-full mt-1  rounded-lg py-2 px-2">
+                                        <div className="border-2 w-full mt-1  rounded-lg py-1 px-2">
                                             <input 
                                             className="w-full outline-none"
                                             type="tel"
@@ -159,7 +159,7 @@ const handleCloseForm = () =>{
                                             />
                                         </div>
                                     </div>
-                                    <div className="my-3">      
+                                    <div className="my-2">      
                                         <label className="font-bold ">Upload Picture</label>                             
                                         <label className="mt-2 w-20 flex justify-center cursor-pointer bg_color h-20 rounded-lg items-center ">
                                         <img src={camera} alt="camera"/>
@@ -189,7 +189,7 @@ const handleCloseForm = () =>{
                                   </div>
                                   <div className="flex items-center">
                                     <h2>2.43MB </h2>
-                                    <h2 className="h-2 w-2 rounded-full bg-white mx-2"></h2>
+                                    <h2 className="h-2 w-2 rounded-full bg_color mx-2"></h2>
                                     <h4 className="text-sm">2 seconds left</h4>
                                     <div className="ml-auto">
                                      <p>30%</p>
@@ -198,7 +198,7 @@ const handleCloseForm = () =>{
                               </div>
 
                               </div>
-                                <div className="mt-14 ">
+                                <div className="mt-10 ">
                                     <button type="submit" className="bg_color w-full rounded-lg py-2 text-center text-white">Create</button>
                                 </div>
                                 </form>
