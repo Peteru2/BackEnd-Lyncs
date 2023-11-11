@@ -174,7 +174,7 @@ const PendOrder = () => {
                         </div>
 
                         <h2 className="my-3">Pending Orders</h2>
-                        <div className="bg-white pendingOrder  rounded-md">
+                        {/* <div className="bg-white shadow-md pendingOrder  rounded-md"> */}
                             {/* <img src={AirPod} alt="air" /> */}
                         <div className="pendingList">                       
                              <div className="grid grid-cols-8 text-white gap-3 bg_color h-10 px-2 text-xs rounded-t-md items-center">
