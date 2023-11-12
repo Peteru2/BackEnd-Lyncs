@@ -6,7 +6,7 @@ import PendOrder from './views/PendOrder';
 import PendDeliveries from './views/PendDeliveries';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { SearchProvider } from './components/SearchContext'; 
-import "./style.css"
+import "./components/style.css"
 import AwaitingFeed from './views/AwaitingFeed';
 import { AuthProvider } from './components/AuthContext';
 import ClosedDelivery from './views/ClosedDelivery';

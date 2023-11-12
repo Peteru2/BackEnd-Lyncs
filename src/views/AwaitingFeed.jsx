@@ -63,7 +63,7 @@ const AwaitingFeed = () => {
   const paginatedData = data && data.data ? Object.values(data.data).slice(startIndex, endIndex) : [
     {
         "deliveryId":"#94045",
-        "price":"$60",
+        "price": 6089,
         "numOfItems":30,
         "view":"View",
         "img":[
@@ -73,7 +73,6 @@ const AwaitingFeed = () => {
  
         ],
         "prodName":"Airpod",
-        "prodPrice":"$5909",
         "prodDescription":"The Apple AirPods 2nd Generation redefine the way you experience audio, setting new standards for wireless earbuds. With their iconic design, seamless connectivity, and unmatched sound quality, these earbuds are a true testament to Apple's commitment to innovation and user-centric technology.",
         "offer":[
             {
@@ -238,7 +237,7 @@ const AwaitingFeed = () => {
 
                                                            <td>{serialNumber}</td>
                                                            <td>{item.deliveryId}</td>
-                                                           <td>{item.price}</td>
+                                                           <td>${item.price}</td>
                                                            <td>{item.numOfItems}</td>
                                                            <td className="text_color cursor-pointer" onClick={()=>handleView(index)}>View</td>
 
@@ -271,7 +270,7 @@ const AwaitingFeed = () => {
                                                         <h5 className="text-sm text-gray-400">Product Name</h5>
                                                         <h5 className=" text-black font-bold mt-2">{paginatedData[selectedView].prodName}</h5>
                                                         <h5 className="text-sm text-gray-400 mt-3">Price</h5>
-                                                        <h5 className=" text-black font-bold mt-1">{paginatedData[selectedView].prodPrice}</h5>
+                                                        <h5 className=" text-black font-bold mt-1">${paginatedData[selectedView].price}</h5>
                                                         <h5 className="text-sm text-gray-400 mt-3">Description</h5>
                                                         <p className="text-xs mt-2">
                                                         {paginatedData[selectedView].prodDescription}
