@@ -12,7 +12,7 @@ const MarketImg = ({ options, onSelectionChange }) => {
     }
     onSelectionChange(selectedOptions.length > 0);
   };
-  console.log('Selected Options:', selectedOptions);
+  // console.log('Selected Options:', selectedOptions);
   
     return ( 
         <>
