@@ -5,6 +5,7 @@ import axios from 'axios'
 
 const useFetch = (url) => {
 const [data, setData] = useState([]);
+const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         // Make a GET request to the API
@@ -15,7 +16,7 @@ const [data, setData] = useState([]);
             // Handle the successful response
             setData(response.data.data);
             console.log(response.data.data)
-           
+            setLoading(false)
                     })
         .catch((error) => {
             // Handle errors
@@ -23,6 +24,6 @@ const [data, setData] = useState([]);
             console.error('Error fetching data:', error);
         });
     }, [url]);
-    return {data}
+    return {data, loading}
 }
 export default useFetch

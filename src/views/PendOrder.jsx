@@ -110,7 +110,7 @@ const PendOrder = () => {
         setCont(false)
       }
       
-      const {data } = useFetch('https://api.lyncs.africa/staff/pending-orders')
+      const {data, loading } = useFetch('https://api.lyncs.africa/staff/pending-orders')
 
       const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10; // Number of items to display per page
@@ -188,29 +188,39 @@ const PendOrder = () => {
                         <p>Action</p>
                         </div>
 
-                        
-                        {paginatedData.map((item, index) => {
-                                    const products = item.products[0]
-                                    const serialNumber = currentSerialNumber + index; 
-                                    // const orderProd = products.order_product;
-                                    return (
-                                        <>
-                                    <div key={index}>
-                                        <div className="grid grid-cols-8 gap-3 rounded-b-md border-b-2 h-14 px-2 text-xs items-center">
-                                        <p>{serialNumber}</p>
-                                        <p>{item.Product}</p>
-                                        <p>{products.order_product.order_id}</p>
-                                        <p>{new Date(products.order_product.createdAt).toLocaleString("en-US", option)}</p>
-                                        <p>{products.order_product.quantity}</p>
-                                        <p>{item.OrderCateg}</p>
-                                        <p onClick={() => handlePreview(index)} className="text_color cursor-pointer">View</p>
-                                        <p onClick={() => handleAction(index)} className="p-2 px-3 bg_color cursor-pointer rounded-md text-white w-20 text-center">Push</p>
+                    {
+                        loading? (
+                                <p className="text-center my-3 font-bold">
+                                        Loading...
+                                </p>
+                        ):
+            <div>
+            {paginatedData.map((item, index) => {
+                                        const products = item.products[0]
+                                        const serialNumber = currentSerialNumber + index; 
+                                        // const orderProd = products.order_product;
+                                        return (
+                                            <>
+                                        <div key={index}>
+                                            <div className="grid grid-cols-8 gap-3 rounded-b-md border-b-2 h-14 px-2 text-xs items-center">
+                                            <p>{serialNumber}</p>
+                                            <p>{item.Product}</p>
+                                            <p>{products.order_product.order_id}</p>
+                                            <p>{new Date(products.order_product.createdAt).toLocaleString("en-US", option)}</p>
+                                            <p>{products.order_product.quantity}</p>
+                                            <p>{item.OrderCateg}</p>
+                                            <p onClick={() => handlePreview(index)} className="text_color cursor-pointer">View</p>
+                                            <p onClick={() => handleAction(index)} className="p-2 px-3 bg_color cursor-pointer rounded-md text-white w-20 text-center">Push</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    </>
+                                        </>
 
-                                        );
-                                        })}
+                                            );
+                                            })}
+                            </div>
+                    }
+                        
+                        
                         
 
 

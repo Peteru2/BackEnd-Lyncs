@@ -45,7 +45,7 @@ const AwaitingFeed = () => {
     //         view: "View"
     //     },
     // ]
-    const {data } = useFetch('https://api.lyncs.africa/staff/merchant-feedback')
+    const {data, loading } = useFetch('https://api.lyncs.africa/staff/merchant-feedback')
   
    
 
@@ -226,9 +226,15 @@ const AwaitingFeed = () => {
                                     <tr>Delivery Id</tr>
                                     <tr>Price</tr>
                                     <tr>Number of Items</tr>
-                                    <tr >View</tr>
+                                                                        <tr >View</tr>
                         
                                         </th>
+                                        {
+                                        loading? (
+                                            <p className="text-center my-3 font-bold">
+                                                    Loading...
+                                            </p>
+                                    ):<div>
                                         {paginatedData.map((item, index) => {
                                                     const serialNumber = currentSerialNumber + index; 
                                                 return(
@@ -247,7 +253,10 @@ const AwaitingFeed = () => {
                                                 )
                                             })
                                         }
-                                       
+
+                                    </div>
+                                    }
+                                
                                         </table>
 
                                         <div className={`await_modal ${preview || selectproceed === 1 ? "modal-show":""}`}>

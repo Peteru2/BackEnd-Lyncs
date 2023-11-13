@@ -10,7 +10,7 @@ import {  useState } from "react";
 
 // import { useSearch } from './SearchContext';
 const PendDeliveries = () => {
-    const {data } = useFetch('https://api.lyncs.africa/staff/pending-deliveries')
+    const {data, loading } = useFetch('https://api.lyncs.africa/staff/pending-deliveries')
   
    
 
@@ -53,8 +53,13 @@ const PendDeliveries = () => {
                         <p>Product Available On</p>
                         
                         </div>
-
-                        {paginatedData.map((item, index) => {
+                        {
+                                        loading? (
+                                            <p className="text-center my-3 font-bold">
+                                                    Loading...
+                                            </p>
+                                    ):<div>
+                                        {paginatedData.map((item, index) => {
                              const serialNumber = currentSerialNumber + index; 
                         return (
                             
@@ -69,6 +74,9 @@ const PendDeliveries = () => {
                             </div>
                             </div>
                             )})}
+                                    </div>
+                                    }
+                        
 
 </div>
 </div>

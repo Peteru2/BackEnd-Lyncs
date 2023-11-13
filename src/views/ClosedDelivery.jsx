@@ -10,7 +10,7 @@ import Funnel from "../images/FunnelSimple.svg"
 // import { useSearch } from './SearchContext';
 const ClosedDelivery = () => {
   
-const {data} = useFetch('https://api.lyncs.africa/staff/closed-deliveries')
+const {data, loading} = useFetch('https://api.lyncs.africa/staff/closed-deliveries')
 const [currentPage, setCurrentPage] = useState(1);
 const itemsPerPage = 10; 
 const startIndex = (currentPage - 1) * itemsPerPage;
@@ -50,8 +50,13 @@ const currentSerialNumber = (currentPage - 1) * itemsPerPage + 1
 
                         
                         </div>
-
-                        {paginatedData.map((item, index) => {
+                        {
+                                        loading? (
+                                            <p className="text-center my-3 font-bold">
+                                                    Loading...
+                                            </p>
+                                    ):<div>
+                                        {paginatedData.map((item, index) => {
                              const serialNumber = currentSerialNumber + index;
 
                         return (
@@ -66,6 +71,9 @@ const currentSerialNumber = (currentPage - 1) * itemsPerPage + 1
                             </div>
                             </div>
                             )})}
+                                    </div>
+                                    }
+                        
 
             </div>
             </div>
