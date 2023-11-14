@@ -229,12 +229,12 @@ const AwaitingFeed = () => {
                                                                         <tr >View</tr>
                         
                                         </th>
-                                        {
+                                        {/* {
                                         loading? (
                                             <p className="text-center my-3 font-bold">
                                                     Loading...
                                             </p>
-                                    ):<div>
+                                    ):<div> */}
                                         {paginatedData.map((item, index) => {
                                                     const serialNumber = currentSerialNumber + index; 
                                                 return(
@@ -254,8 +254,8 @@ const AwaitingFeed = () => {
                                             })
                                         }
 
-                                    </div>
-                                    }
+                                    {/* </div> */}
+                                    {/* } */}
                                 
                                         </table>
 
