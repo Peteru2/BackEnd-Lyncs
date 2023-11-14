@@ -372,3 +372,10 @@ body{
     /* background-color: red; */
     z-index: 99999
   }
+  .inactive-icon {
+    fill: #909090; /* Change the color to the desired inactive color */
+  }
+  .active-icon {
+    fill: #F18701; /* Change the color to the desired inactive color */
+  }
+  
