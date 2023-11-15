@@ -99,6 +99,39 @@ const AwaitingFeed = () => {
 
     },
     {
+        "deliveryId":"#34404",
+        "price": 3089,
+        "numOfItems":30,
+        "view":"View",
+        "img":[
+                airpod,
+                airpod,
+                airpod,
+ 
+        ],
+        "prodName":"Eye Cleaner",
+        "prodDescription":"The Apple AirPods 2nd Generation redefine the way you experience audio, setting new standards for wireless earbuds. With their iconic design, seamless connectivity, and unmatched sound quality, these earbuds are a true testament to Apple's commitment to innovation and user-centric technology.",
+        "offer":[
+            {
+            "offerName":"Offer A",
+            "marchantName":"Johnson Adams",
+            "offerPrice": 129045,
+            },
+            {
+                "offerName":"Offer B",
+                "marchantName":"Olatt Adams",
+                "offerPrice": 45045,
+                },
+            {
+                    "offerName":"Offer A",
+                    "marchantName":"Johnson Adams",
+                    "offerPrice": 129045,
+                    },
+                    
+    ],
+
+    },
+    {
         "deliveryId":"#64025",
         "price":"$100",
         "numOfItems":90,
