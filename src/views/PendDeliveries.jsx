@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 
 import useFetch from "../components/useFetch";
 import Pagination from '../components/Pagination';
-import Funnel from "../images/FunnelSimple.svg"
+import Funnel from "../assets/images/FunnelSimple.svg"
 
 import {  useState } from "react";
 

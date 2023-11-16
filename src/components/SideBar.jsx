@@ -1,11 +1,11 @@
 import React from 'react'
-import loggo from  "../images/logo.png"
-import  DashSideIcon from "../images/DashSideIcon.jsx"
-import PendOrderSideIcon from "../images/ShoppingCartSimple2.jsx"
-import PendDiliSideIcon from "../images/Truck2.jsx"
-import AwaitSideIcon from "../images/Alarm2.jsx"
-import ClosedSideIcon from "../images/CalendarX2.jsx"
-import StaffSideIcon from "../images/UsersFour2.jsx" 
+import loggo from  "../assets/images//logo.png"
+import  DashSideIcon from "./sideBarIcon/DashSideIcon.jsx"
+import PendOrderSideIcon from "./sideBarIcon/ShoppingCartSimple2.jsx"
+import PendDiliSideIcon from "./sideBarIcon/Truck2.jsx"
+import AwaitSideIcon from "./sideBarIcon/Alarm2.jsx"
+import ClosedSideIcon from "./sideBarIcon/CalendarX2.jsx"
+import StaffSideIcon from "./sideBarIcon/UsersFour2.jsx" 
 import { useAuth } from './AuthContext';
 
 

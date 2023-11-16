@@ -4,12 +4,12 @@ import { useState, useEffect } from "react";
 import useFetch from "../components/useFetch";
 
 import Pagination from '../components/Pagination';
-import Funnel from "../images/FunnelSimple.svg"
-import closeButton from "../images/forbidden-2.svg"
-import airpod from "../images/airpod.png"
-import user from "../images/User.svg"
+import Funnel from "../assets/images/FunnelSimple.svg"
+import closeButton from "../assets/images/forbidden-2.svg"
+import airpod from "../assets/images/airpod.png"
+import user from "../assets/images/User.svg"
 import Succes from "../components/success";
-import caretLeft from "../images/CaretDown.svg"
+import caretLeft from "../assets/images/CaretDown.svg"
 import ImageSlider from "../components/imageSlider";
 
 

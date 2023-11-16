@@ -1,5 +1,5 @@
-import X from '../images/X.svg'
-import camera from "../images/CameraPlus.svg"
+import X from '../assets/images/X.svg'
+import camera from "../assets/images/CameraPlus.svg"
 import Succes from "./success";
 import { useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';

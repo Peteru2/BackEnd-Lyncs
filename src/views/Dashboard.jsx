@@ -1,10 +1,10 @@
 import SideBar from "../components/SideBar";
 import Navbar from "../components/Navbar"
 
-import Frame1 from  "../images/Frame1.svg"
-import Vector1 from "../images/Vector1.svg"
-import smallVect from "../images/diagram.svg"
-import Funnel from "../images/FunnelSimple.svg"
+import Frame1 from  "../assets/images//Frame1.svg"
+import Vector1 from "../assets/images/Vector1.svg"
+import smallVect from "../assets/images/diagram.svg"
+import Funnel from "../assets/images/FunnelSimple.svg"
 import Loader from "../components/Loader";
 import Pied from "../components/Pie";
 import Histo from "../components/Histo";
