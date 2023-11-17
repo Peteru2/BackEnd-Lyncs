@@ -16,35 +16,7 @@ import ImageSlider from "../components/imageSlider";
 
 
 const AwaitingFeed = () => {
-    // const awaitingFeedList = [
-
-    //     {
-    //         sn: 1,
-    //         deliveryId: "#65jyu",
-    //         price: 123087,
-    //         numOfItems: 5,
-    //         view: "View"
-    //     },
-    //      {
-    //         sn: 2,
-    //         deliveryId: "#25jrt",
-    //         price:68287,
-    //         numOfItems: 6,
-    //         view: "View"
-    //     }, {
-    //         sn: 3,
-    //         deliveryId: "#75rtg",
-    //         price: 237690,
-    //         numOfItems: 1,
-    //         view: "View"
-    //     }, {
-    //         sn: 4,
-    //         deliveryId: "#48lhk",
-    //         price: 79034,
-    //         numOfItems: 8,
-    //         view: "View"
-    //     },
-    // ]
+    
     const {data, loading } = useFetch('https://api.lyncs.africa/staff/merchant-feedback')
   
    

@@ -35,7 +35,6 @@ const handleCloseForm = () =>{
 
     const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
   const phoneRegex = /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}\)?[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
-  setShowSuccessComp(true)
     if(formData.firstName.trim() === ''){
         toast.error("First Name is required", {
             // position: toast.POSITION.TOP_CENTER,
@@ -71,6 +70,10 @@ const handleCloseForm = () =>{
                           position: toast.POSITION.TOP_CENTER,
                         })
                       }
+                      
+                else{
+                      setShowSuccessComp(true)
+
                 
     const url = 'https://api.lyncs.africa/staff/register';
 
@@ -94,6 +97,7 @@ const handleCloseForm = () =>{
     }
   };
     
+}
     
 
     return ( 
